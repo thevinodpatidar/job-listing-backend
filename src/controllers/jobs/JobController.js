@@ -23,7 +23,7 @@ const GetJobs = async(req,res)=>{
 const GetJobWithId = async(req,res)=>{
 
     let { id } = req.params;
-
+    console.log(id);
     let [error,entryFound] = await to(Jobs.query().skipUndefined().where("id",id).withGraphFetched('company').throwIfNotFound());
 
     if(error) return notFoundError(res,"No record found");

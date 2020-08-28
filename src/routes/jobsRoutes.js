@@ -7,6 +7,6 @@ const { authenticateToken } = require("../middlewares/authenticate");
 
 router.post("/jobs", authenticateToken, JobController.AddJob);
 router.get("/jobs" ,JobController.GetJobs);
-router.get("/jobs/:id", authenticateToken ,JobController.GetJobWithId);
+router.get("/jobs/:id",JobController.GetJobWithId);
 
 module.exports = router;
